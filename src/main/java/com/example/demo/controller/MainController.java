@@ -14,10 +14,10 @@ import com.example.demo.utils.WebUtils;
 @Controller
 public class MainController {
  
-    @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/" }, method = RequestMethod.GET)
     public String welcomePage(Model model) {
-        model.addAttribute("title", "Xin chào");
-        model.addAttribute("message", "Đây là trang đăng nhập");
+        model.addAttribute("title", "Trang Chủ");
+        model.addAttribute("message", "TOURBOOKING");
         return "welcomePage";
     }
  
@@ -28,6 +28,7 @@ public class MainController {
  
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
+        model.addAttribute("title", "Admin Page");
          
         return "adminPage";
     }
